@@ -1,7 +1,8 @@
+#imports sqlite3
 import sqlite3
 
 conn = sqlite3.connect('databaseassign.db')
-
+#creates a database databaseassign if there is not one
 with conn:
     cur = conn.cursor()
     cur.execute("create table if not exists tbl_filename(\
@@ -11,6 +12,7 @@ with conn:
     conn.commit()
 conn.close()
 
+#adds the files into the database into column col_file
 conn = sqlite3.connect('databaseassign.db')
 with conn:
     cur = conn.cursor()
@@ -29,6 +31,7 @@ with conn:
     conn.commit()
 conn.close()
 
+#looks in the database for fiels that end with txt
 conn = sqlite3.connect('databaseassign.db')
 with conn:
     cur = conn.cursor()

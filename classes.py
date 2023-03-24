@@ -16,11 +16,13 @@ class university_user:
         return msg
 
     def login(self):
+        #has the user enter in information
         user_name = input("enter your username")
         user_email = input("enter your email")
         user_password = input("enter your password")
         if (user_email ==self.email_format and user_password ==self.password):
             print("welcome back {}".format(user_name))
+            #adds a message if the input is wrong
         else:
             print("the user email or password is incorrect")
       
@@ -45,6 +47,7 @@ class teacher(university_user):
     teacher = True
     pin = '1234'
 
+#the information asked for is slightly different if they are a teacher
     def login(self):
         user_name = input("enter your username")
         user_email = input("enter your email")

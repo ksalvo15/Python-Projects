@@ -59,8 +59,10 @@ class ParentWindow(Frame):
         source_files = os.listdir(source)
         #get the current time
         timenow=datetime.datetime.now()
-        #get the time of the file
-        filetime=os.path.getmtime(source)
+        #get the time of the file from the source directory (should i be using the directory path vs
+        #source since we want to pull from a specific folder?
+        
+        filetime=os.path.getmtime(r'C:\Users\kelse\Desktop\Customer Source')
         timedelta(days=1)
 
         for i in source_files:

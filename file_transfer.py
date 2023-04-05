@@ -6,6 +6,7 @@ import shutil
 import datetime
 import time
 import os.path
+from datetime import timedelta
 
 class ParentWindow(Frame):
     def __init__(self,master):
@@ -61,13 +62,18 @@ class ParentWindow(Frame):
         timenow=datetime.datetime.now()
         #get the time of the file from the source directory (should i be using the directory path vs
         #source since we want to pull from a specific folder?
+        creation=timenow-timedelta(days=1)
+                
         
-        filetime=os.path.getmtime(r'C:\Users\kelse\Desktop\Customer Source')
-        timedelta(days=1)
+        
+        
 
         for i in source_files:
+            file_path=os.path.join(source, i)
+            filetime=os.path.getmtime(file_path)
+            modtime = datetime.datetime.fromtimestamp(filetime)
             #if the time of the file + 1 day is greater than timenow then move the file over
-            if timenow <= (filetime + timedelta):
+            if modtime > creation:
                 shutil.move(source + '/' + i, dest)
                 print(i + ' was successfully transfered.')
             else:

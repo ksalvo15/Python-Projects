@@ -27,7 +27,7 @@ class ParentWindow(Frame):
     def defaultHTML(self):
         htmlText = "stay tuned for amazing sale"
         htmlFile=open("index.html","w")
-        htmlContent = "<html\n<body>\n<h1>" + htmlText + "</h1>\n</body>\n</html>"
+        htmlContent = "<html\n<body>" + htmlText + "</body>\n</html>"
         htmlFile.write(htmlContent)
         htmlFile.close()
         webbrowser.open_new_tab("index.html")

@@ -11,7 +11,6 @@ This is my Python Project Folder
 # Banking Project
 This project is through Django and it can create a user profile, add or subtract a transaction to the profile and then provide the balance afterwards.
 
-
 # Phonebook Project  
 This projects created a phonebook. It is a phonebook database that you can create new entries, edit, and delete.
 
